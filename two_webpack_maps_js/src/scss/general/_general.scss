@@ -1,0 +1,80 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Gotham', sans-serif;
+    font-size: 14px;
+}
+
+main{
+    max-width: 1920px;
+    overflow: hidden;
+}
+
+h1{
+    margin: 0 0 40px;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 400;
+    color: $font-light;
+    text-transform: uppercase;
+}
+h2{
+    position: relative;
+    padding: 40px 0 0;
+    font-size: 44px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $font-dark;
+    &:before{
+        @include pseudo();
+        @include size(100px, 1px);
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $font-dark;
+    }
+}
+
+h3{
+    font-size: 44px;
+    color: $font-dark;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h4{
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $font-dark
+}
+
+p{
+    font-weight: 400;
+    color: $font-dark-light;
+    font-size: 18px;
+}
+
+.container{
+    position: relative;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 40px;
+        text-align: center;
+    }
+    h2{
+        padding: 20px 0 0;
+    }
+    h2, h3{
+        font-size: 30px;
+    }
+}

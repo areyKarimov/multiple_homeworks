@@ -1,0 +1,160 @@
+.menu{
+    background: $blue;
+    height: 10vh;
+    @media screen and (max-width: 768px){
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 20;
+    }
+    & .container{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__wrapper{
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        z-index: 10;
+        & input{
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            &:checked{
+                &~.burger{
+                    position: fixed;
+                    bottom: 15px;
+                    right: 15px;
+                    z-index: 10;
+                    & span{
+                        background: $black;
+                        &:nth-child(2){
+                            opacity: 0;
+                        }
+                        &:nth-child(1){
+                            animation: burger-anim__top-span 0.3s forwards;
+                        }
+                        &:nth-child(3){
+                            animation: burger-anim__bottom-span 0.3s forwards;
+                        }
+                    }
+                }
+                &~.menu{
+                    &__list{
+                        position: fixed;
+                        flex-direction: column;
+                        display: flex;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: $light-text;
+                        opacity: 1;
+                        z-index: 5;
+                        & .menu__item{
+                            width: 100%;
+                            & a{
+                                opacity: 0;
+                                color: $black;
+                                animation: menu__item-anim 0.6s forwards;
+                                &:hover{
+                                    background: $black;
+                                    color: $light-text;
+                                }
+                            }
+                            &:nth-child(2) a{
+                                animation-duration: 1s;
+                            }
+                            &:nth-child(3) a{
+                                animation-duration: 1.4s;
+                            }
+                            &:nth-child(4) a{
+                                animation-duration: 1.8s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        @media screen and (max-width: 768px){
+            display: none;
+        }
+    }
+    &__logo{
+        color: $light-text;
+        text-transform: uppercase;
+        font-size: 24;
+        letter-spacing: 0.1em;
+    }
+    &__item{
+        height: 100%;
+        & a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            height: 100%;
+            font-family: 'Aleo', serif;
+            color: $light-text;
+            font-size: 14px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            &:hover{
+                background: $light-text;
+                color: #000;
+            }
+        }
+    }
+}
+
+
+@keyframes burger-anim__top-span{
+    0%{
+        top: 0;
+        transform: translateY(0) rotate(0);
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%) rotate(0);
+    }
+    100%{
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+}
+
+@keyframes burger-anim__bottom-span{
+    0%{
+        bottom: 0;
+        transform: translateY(0) rotate(0);
+    }
+    50%{
+        bottom: 50%;
+        transform: translateY(50%) rotate(0);
+    }
+    100%{
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
+}
+
+
+@keyframes menu__item-anim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

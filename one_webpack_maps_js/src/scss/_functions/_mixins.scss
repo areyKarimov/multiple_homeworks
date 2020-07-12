@@ -1,0 +1,274 @@
+// Mixins
+//
+//
+//  1. Grid system
+//  2. Flexbox
+//  3. Media queries
+//  4. Useful
+//
+//___________________________________
+
+
+// support css " env(safe-area ...)"
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+//  1. Grid system
+//
+//
+
+@mixin make-container($gutter: $gutter-width) {
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-container-responsive($gutter-responsive: $gutter-width-responsive) {
+  padding-right: $gutter-responsive / 2;
+  padding-left: $gutter-responsive / 2;
+}
+
+@mixin make-container-max-widths($max-widths: $container-max-widths) {
+  max-width: $container-max-widths;
+}
+
+//  2. Flexbox
+//
+//
+
+@mixin flex() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin flexbox($justify,$align) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+//  3. Media queries
+//
+//
+
+//  3.1 respond-above(min-width)
+
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+//  3.2 respond-below(max-width)
+
+// @include respond-below(sm) {}
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+//  3.3 respond-between(min-width - max-width)
+
+// @include respond-between(sm, md) {}
+@mixin respond-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+//  4. Useful
+//
+//
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+// Placeholder
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// Centering with transform
+
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Absolute pseudo element
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin pseudoBG($display: block, $pos: absolute, $content: '',$repeat: no-repeat, $position: 50%, $size: contain){
+  content: $content;
+  display: $display;
+  position: $pos;
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin pseudoHeight($paddingB){
+  content: '';
+  display: block;
+  padding-bottom: $paddingB;
+}
+
+// Setting width/height
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+// CSS arrow
+
+@mixin arrow($direction: down, $size: 5px, $color: #555) {
+  width: 0;
+  height: 0;
+  @if ($direction == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if ($direction == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+  @else if ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+  @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+}
+
+// Text-overflow
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Antialias
+
+@mixin antialias {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Image cover
+
+@mixin img-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// hide/show
+
+@mixin hide {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+// height=lineheight
+
+@mixin lineHeight($height, $lineheight: $height) {
+  height: $height;
+  line-height: $lineheight;
+}
+
+// listReset
+
+@mixin listReset() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

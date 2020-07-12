@@ -1,0 +1,38 @@
+.header{
+    position: fixed;
+    padding: 50px 0;
+    top: 0;
+    left: 0;
+    @include size(100%, auto);
+    background: rgba(125, 92, 249, 0);
+    transition: $default-transition;
+    z-index: 10;
+    & .container{
+        display: grid;
+        grid-template-columns: 3fr 7fr 2fr;
+        grid-column-gap: 80px;
+        justify-content: space-between;
+    }
+    &.active{
+        background: rgba(125, 92, 249, 0.5);
+        &:hover{
+            background: rgba(125, 92, 249, 1);
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .header{
+        & .container{
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header{
+        padding: 10px 0;
+
+    }
+}

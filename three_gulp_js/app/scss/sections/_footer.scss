@@ -1,0 +1,32 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 0 50px;
+    background: $black;
+    @media screen and (max-width: 768px) {
+        padding: 50px 0;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        max-width: 170px;
+    }
+    &__logo{
+        margin: 0 0 5px;
+        text-align: center;
+        color: $light-text;
+        text-transform: uppercase;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+    }
+    &__caption{
+        text-align: center;
+        white-space: nowrap;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        color: $light-text;
+        font-weight: 300;
+    }
+}

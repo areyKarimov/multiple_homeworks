@@ -1,0 +1,266 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "Harrix",
+sliderTitle: "ВИТАМИН В 17",
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+  <div style="display: none">
+    <%= _.template(require('./../includes/icons.html').default)(data) %>
+  </div>
+
+
+  <main>
+    <section class="initial" id="js-initial">
+      <div class="initial__swiper swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="initial__bg"><img src="img/main_bg.jpg" alt="background"></div>
+            <div class="container">
+              <h1 data-swiper-parallax="-300">Simple & mordern</h1>
+              <p data-swiper-parallax="-200">We make the world's beautiful every day</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="initial__bg" style="filter: saturate(100%) sepia(50%)"><img src="img/main_bg.jpg" alt="background"></div>
+            <div class="container">
+              <h1 data-swiper-parallax="-300">Simple & mordern</h1>
+              <p data-swiper-parallax="-200">We make the world's beautiful every day</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="initial__bg" style="filter: sepia(100%)"><img src="img/main_bg.jpg" alt="background"></div>
+            <div class="container">
+              <h1 data-swiper-parallax="-300">Simple & mordern</h1>
+              <p data-swiper-parallax="-200">We make the world's beautiful every day</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="initial__bg" style="filter: invert(100%)"><img src="img/main_bg.jpg" alt="background"></div>
+            <div class="container">
+              <h1 data-swiper-parallax="-300">Simple & mordern</h1>
+              <p data-swiper-parallax="-200">We make the world's beautiful every day</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="initial__bg" style="filter: grayscale(100%)"><img src="img/main_bg.jpg" alt="background"></div>
+            <div class="container">
+              <h1 data-swiper-parallax="-300">Simple & mordern</h1>
+              <p data-swiper-parallax="-200">We make the world's beautiful every day</p>
+            </div>
+          </div>
+        </div>
+        <div class="initial__pagination swiper-pagination"></div>
+      </div>
+      <a href="#js-about" class="initial__scroll">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="about" id="js-about">
+      <h2>what we do</h2>
+      <div class="about__work">
+        <span class="about__work-square"></span>
+        <div class="container">
+          <div class="about__work-img"><img src="uploads/img1.jpg" alt="img"></div>
+          <div class="about__work-content">
+            <span>One World</span>
+            <h3>Trade Center</h3>
+            <p>Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
+            <a class="button">more details</a>
+            <div class="about__work-location">
+          <span>
+            <svg>
+              <use href="#pin"></use>
+            </svg>
+          </span>
+              <p>New York City, United States - 1776 feet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about__work">
+        <span class="about__work-square"></span>
+        <div class="container">
+          <div class="about__work-img"><img src="uploads/img2.jpg" alt="img"></div>
+          <div class="about__work-content">
+            <span>International</span>
+            <h3>Commerce Centre</h3>
+            <p>Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.</p>
+            <a class="button">more details</a>
+            <div class="about__work-location">
+          <span>
+            <svg>
+              <use href="#pin"></use>
+            </svg>
+          </span>
+              <p>Hong Kong - 1588 Feet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news" id="js-news">
+      <div class="news__bg"><img src="img/news_bg.jpg" alt="background"></div>
+      <h2>what we do</h2>
+      <div class="container">
+        <div class="news__swiper swiper-container">
+          <div class="swiper-wrapper">
+            <div class="news__item swiper-slide">
+              <a href="#" class="news__link"></a>
+              <div class="news__item-img"><img src="uploads/news_img1.jpg" alt="news image"><span></span></div>
+              <div class="news__item-content">
+                <h4>See The Unmatched Beauty Of The Great. Lakes.</h4>
+                <p>Free directories: directories are perfect for customers that are searching for a particular topic. What’s great about them is that
+                  you only have to post once and they are good for long periods of time. It saves a lot of your time when you don’t have to resubmit your
+                  information every week or every month. The bad news is most of your traffic won’t come from here. I still feel it is worth it to get your
+                  link out there. Just take one day and set it aside for posting to free directories. You won’t need to do it again for at least 6 months.
+                <div class="news__item-author">
+                  <div class="news__item-author-photo"><img src="uploads/news_photo1.jpg" alt="photo"></div>
+                  <div class="news__item-author-inform">
+                    <p class="news__item-author-name">Isaac Dunn</p>
+                    <p class="news__item-data">09 Feb 2017</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item swiper-slide">
+              <a href="#" class="news__link"></a>
+              <div class="news__item-img"><img src="uploads/news_img2.jpg" alt="news image"><span></span></div>
+              <div class="news__item-content">
+                <h4>Effective Advertising Pointers.</h4>
+                <p>Having a home based business is a wonderful asset to your life. The problem still stands, when it comes time to advertise your business
+                  for a cheap cost. I know you have looked for this answer everywhere; I am here to share a few simple yet creative ways, to advertise your new
+                  home business. A few suggestions would be, newspapers is the one source that many people go to, when they have just opened there business.
+                  You would need to research online, for newspapers that are in your area. Newspapers are a very simple yet effective tool to use to take
+                  your business from basic home based business to business galore. Having catchy phrases and pictures or photographs of your products should
+                  help spice it up. Knowing your audience is the key to businesses. There are also, radio stations you could call in, or even email too. If
+                  you are a communicator, you can try to get onto a radio station and just share your business. You would need to write an outline or some
+                  type of catchy jingle that will help you be different from the rest of the business. The creativity comes from within. Knowing your target
+                  and knowing what you provide is gold, will surely, make you stand out from the rest of the crowd.
+                <div class="news__item-author">
+                  <div class="news__item-author-photo"><img src="uploads/news_photo2.jpg" alt="photo"></div>
+                  <div class="news__item-author-inform">
+                    <p class="news__item-author-name">Dominic Freeman</p>
+                    <p class="news__item-data">24 Apr 2017</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item swiper-slide">
+              <a href="#" class="news__link"></a>
+              <div class="news__item-img"><img src="uploads/news_img3.jpg" alt="news image"><span></span></div>
+              <div class="news__item-content">
+                <h4>Hypnotize Yourself Into The Ghost.</h4>
+                  <p>Your images must be sharp and appealing. Your text and even the font you use for the text is important.
+                  The cover page design and the design of your catalog’s product pages all play important roles in designing
+                  a catalog that will bring in new customers and sales.</p>
+                <div class="news__item-author">
+                  <div class="news__item-author-photo"><img src="uploads/news_photo3.jpg" alt="photo"></div>
+                  <div class="news__item-author-inform">
+                  <p class="news__item-author-name">Alice Ward</p>
+                  <p class="news__item-data">30 Dec 2017</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item swiper-slide">
+              <a href="#" class="news__link"></a>
+              <div class="news__item-img"><img src="uploads/news_img1.jpg" alt="news image"><span></span></div>
+              <div class="news__item-content">
+                <h4>See The Unmatched Beauty Of The Great. Lakes.</h4>
+                <p>Free directories: directories are perfect for customers that are... searching for a particular topic. What’s great about them is that
+                you only have to post once and they are good for long periods of time. It saves a lot of your time when you don’t have to resubmit your
+                information every week or every month. The bad news is most of your traffic won’t come from here. I still feel it is worth it to get your
+                link out there. Just take one day and set it aside for posting to free directories. You won’t need to do it again for at least 6 months.
+                <div class="news__item-author">
+                  <div class="news__item-author-photo"><img src="uploads/news_photo1.jpg" alt="photo"></div>
+                  <div class="news__item-author-inform">
+                  <p class="news__item-author-name">Isaac Dunn</p>
+                  <p class="news__item-data">09 Feb 2017</p>
+                </div>
+                </div>
+              </div>
+            </div>
+      <div class="news__item swiper-slide">
+        <a href="#" class="news__link"></a>
+        <div class="news__item-img"><img src="uploads/news_img2.jpg" alt="news image"><span></span></div>
+        <div class="news__item-content">
+          <h4>Effective Advertising Pointers.</h4>
+          <p>Having a home based business is a wonderful asset to your life. The problem still stands, when it comes time to advertise your business
+            for a cheap cost. I know you have looked for this answer everywhere; I am here to share a few simple yet creative ways, to advertise your new
+            home business. A few suggestions would be, newspapers is the one source that many people go to, when they have just opened there business.
+            You would need to research online, for newspapers that are in your area. Newspapers are a very simple yet effective tool to use to take
+            your business from basic home based business to business galore. Having catchy phrases and pictures or photographs of your products should
+            help spice it up. Knowing your audience is the key to businesses. There are also, radio stations you could call in, or even email too. If
+            you are a communicator, you can try to get onto a radio station and just share your business. You would need to write an outline or some
+            type of catchy jingle that will help you be different from the rest of the business. The creativity comes from within. Knowing your target
+            and knowing what you provide is gold, will surely, make you stand out from the rest of the crowd.
+            <div class="news__item-author">
+              <div class="news__item-author-photo"><img src=uploads/news_photo2.jpg" alt="photo"></div>
+              <div class="news__item-author-inform">
+          <p class="news__item-author-name">Dominic Freeman</p>
+          <p class="news__item-data">24 Apr 2017</p>
+        </div>
+      </div>
+      </div>
+      </div>
+          </div>
+        </div>
+        <div class="news__controls">
+          <button class="swiper-button-next"><span></span></button>
+          <button class="swiper-button-prev"><span></span></button>
+        </div>
+      </div>
+      <div class="news__pagination swiper__pagination"></div>
+    </section>
+
+    <section class="gallery" id="js-gallery">
+      <h2>gallery</h2>
+      <div class="container">
+        <div class="gallery__item"><a href="#"></a><img src="uploads/gallery_img1.jpg" alt="image"></div>
+        <div class="gallery__item"><a href="#"></a><img src="uploads/gallery_img2.jpg" alt="image"></div>
+        <div class="gallery__item"><a href="#"></a><img src="uploads/gallery_img3.jpg" alt="image"></div>
+        <div class="gallery__item"><a href="#"></a><img src="uploads/gallery_img4.jpg" alt="image"></div>
+        <div class="gallery__item"><a href="#"></a><img src="uploads/gallery_img5.jpg" alt="image"></div>
+      </div>
+      <button class="button">see more</button>
+    </section>
+    <section class="map" id="js-contacts">
+      <iframe src="https://snazzymaps.com/embed/248243" width="100%" height="600px" style="border:none;"></iframe>
+      <form action="" class="form">
+        <h2>get in touch</h2>
+        <div class="form__contacts">
+          <p>
+            <svg>
+              <use href="#pin"></use>
+            </svg>
+            91 Nolan Extensions Suite 670
+          </p>
+          <a href="tel:0013568682454">
+            <svg>
+              <use href="#phone"></use>
+            </svg>
+            +001 356-868-2454
+          </a>
+          <a href="mailto:gahuy93@gmail.com">
+            <svg>
+              <use href="#inbox"></use>
+            </svg>
+            gahuy93@gmail.com
+          </a>
+          <p>
+            <svg>
+              <use href="#clock"></use>
+            </svg>
+            From 07:05AM to 19:30PM
+          </p>
+        </div>
+        <div class="form__inputs">
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="email" placeholder="Email">
+          <button class="button">submit</button>
+        </div>
+      </form>
+    </section>
+    <%= _.template(require('./../includes/footer.html').default)(data) %>

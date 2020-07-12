@@ -1,0 +1,72 @@
+.review{
+    padding: 110px 0 200px;
+    background: url(../img/review__bg.jpg);
+    @media screen and (max-width: 768px){
+        padding: 50px 0 80px;
+    }
+    & .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__title{
+        margin: 0 0 100px;
+        font-family: 'Aleo', serif;
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+        @media screen and (max-width: 768px){
+            margin: 0 0 30px;
+            text-align: center;
+        }
+    }
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        background: $black;
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+        }
+    }
+    &__img{
+        width: 40%;
+        height: 100%;
+        object-fit: cover;
+        @media screen and (max-width: 1200px){
+            min-height: 55vh;
+        }
+        @media screen and (max-width: 768px){
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__content{
+        padding: 25px 50px;
+        width: 60%;
+        @media screen and (max-width: 768px){
+            width: 100%;
+        }
+        @media screen and (max-width: 480px){
+            padding: 5px 10px;
+        }
+    }
+    &__author{
+        margin: 25px 0;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    &__text{
+        margin: 25px 0 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 300;
+    }
+    &__quotes{
+        position: relative;
+        bottom: 10px;
+        width: 20px;
+        height: 20px;
+        fill: $blue;
+    }
+}

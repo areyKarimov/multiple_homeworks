@@ -1,0 +1,46 @@
+.socials{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: $secondary-color;
+  & span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(35px);
+    border-radius: 50%;
+    background: $primary-color;
+    pointer-events: none;
+    transition: $default-transition;
+    border: 1px solid transparent;
+    &:before{
+      font-family: 'icomoon' !important;
+      font-size: 16px;
+      color: $secondary-color;
+      transition: $default-transition;
+    }
+    &.behance:before{
+      content: "\eaa8";
+    }
+    &.linkedin:before{
+      content: "\eaca";
+    }
+    &.google:before{
+      content: "\e900";
+      font-size: 20px;
+    }
+    &.facebook:before{
+      content: "\ea90";
+    }
+    &.twitter:before{
+      content: "\ea96";
+    }
+  }
+  & a:hover span{
+    background: $secondary-color;
+    border-color: $light;
+    &:before{
+      color: $light;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.button{
+  padding: 15px 40px;
+  font-family:'Gotham', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $font-dark;
+  background: none;
+  border: 1px solid $font-dark;
+  transition: $default-transition;
+  cursor: pointer;
+  &:hover{
+    color: $font-light;
+    background: $font-dark;
+  }
+}

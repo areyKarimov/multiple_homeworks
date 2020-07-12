@@ -1,0 +1,126 @@
+.about{
+  padding: 100px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__work{
+    position: relative;
+    margin: 100px 0 0 0;
+    padding: 70px 0 40px 0;
+    width: 100%;
+    &-square{
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(40%, 470px);
+      background: #55b7ff;
+      z-index: -1;
+    }
+    & .container{
+      display: flex;
+      justify-content: space-between;
+    }
+    &-img{
+      @include size(50%, 470px);
+      & img{
+        @include size(100%);
+        object-fit: cover;
+      }
+    }
+    &-content{
+      padding: 60px 0 0 0;
+      color: $font-dark;
+      width: calc(50% - 70px);
+      & span{
+        display: inline-block;
+        margin: 0 0 18px;
+        font-size: 22px;
+        line-height: 22px;
+        text-transform: uppercase;
+      }
+      & h3{
+        margin: 0 0 30px;
+      }
+      & p{
+        margin: 0 0 30px;
+        font-size: 18px;
+        line-height: 28px;
+      }
+      & a{
+        display: inline-block;
+        margin: 0 0 60px;
+      }
+    }
+    &-location{
+      display: flex;
+      & span{
+        display: flex;
+        align-items: center;
+        margin: 0 8px 0 0;
+        & svg{
+          @include size(14px, 20px);
+          fill: #3a4d63;
+        }
+      }
+      & p{
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+    &:nth-of-type(even){
+      & .about__work-square{
+        left: unset;
+        right: 0;
+        background: #7e5aff;
+      }
+      & .about__work-img{
+        order: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about{
+    padding: 50px 0 0;
+    &__work{
+      margin: 50px 0 0;
+      &:nth-of-type(even) .about__work-img{
+        order: unset;
+      }
+      & .container{
+        flex-wrap: wrap;
+      }
+      &-img{
+        width: 100%;
+      }
+      &-content{
+        width: 100%;
+      }
+      &-square{
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about{
+    &__work{
+      &-content{
+        padding: 30px 0 0;
+        & a{
+          margin: 0 0 30px;
+        }
+      }
+      &-img{
+        height: 270px;
+      }
+      &-square{
+        height: 270px;
+      }
+    }
+  }
+}

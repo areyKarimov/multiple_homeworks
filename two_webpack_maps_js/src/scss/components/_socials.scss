@@ -1,0 +1,49 @@
+.socials{
+  & ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  & li{
+    margin: 0 22px 0 0;
+    &:last-of-type{
+      margin: 0;
+    }
+  }
+  & a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(40px);
+    border-radius: 50%;
+    border: 1px solid $font-light;
+    transition: $default-transition;
+    cursor: pointer;
+    &:hover{
+      transform: rotateX(360deg);
+      border-color: $font-dark;
+      & svg{
+        fill: $font-dark;
+      }
+    }
+  }
+  & svg {
+    @include size(16px);
+    fill: $font-light;
+    transition: $default-transition;
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .socials--header{
+    @include center(horizontal);
+    position: fixed;
+    bottom: 10vh;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: $default-transition;
+  }
+}

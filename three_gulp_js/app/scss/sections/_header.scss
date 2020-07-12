@@ -1,0 +1,67 @@
+.header{
+    height: 90vh;
+    background: url(../img/header__bg.jpg) no-repeat center;
+    background-size: cover;
+    & .container{
+        padding: 10% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title{
+        color: $light-text;
+        letter-spacing: 0.1em;
+        font-size: 48px;
+        font-weight: 300;
+        text-transform: uppercase;
+        @media screen and (max-width: 480px){
+            font-size: 36px;
+        }
+    }
+    &__caption{
+        margin-bottom: 35px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 22px;
+        letter-spacing: 0.1em;
+        color: $light-text;
+        font-weight: 300;
+        @media screen and (max-width: 480px){
+            font-size: 16px;
+        }
+    }
+    &__scroll{
+        position: relative;
+        color: $light-text;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        margin-top: 120px;
+        height: 80px;
+        scroll-behavior: smooth;
+        &:hover{
+            & span{
+                animation: anim-scroll 0.3s alternate infinite;
+            }
+        }
+        & span{
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid $light-text;
+            border-left: 2px solid $light-text;
+        }
+    }
+}
+
+@keyframes anim-scroll{
+    0%{
+        bottom: 0;
+    }
+    100%{
+        bottom: -30px;
+    }
+}

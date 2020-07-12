@@ -1,0 +1,18 @@
+.socials{
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__item{
+        &:hover{
+            .socials__icon{
+                fill: $blue;
+            }
+        }
+    }
+    &__icon{
+        width: 15px;
+        height: 15px;
+        fill: $light-text;
+    }
+}

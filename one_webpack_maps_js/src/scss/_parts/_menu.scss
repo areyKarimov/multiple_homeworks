@@ -1,0 +1,56 @@
+.menu{
+  @media screen and (max-width: 768px){
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size(100vw, 100vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $secondary-color;
+    opacity: 0;
+    pointer-events: none;
+    transition: $default-transition;
+    &.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  & ul{
+    display: flex;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+      height: 80%;
+      justify-content: space-between;
+      text-align: center;
+    }
+    & li{
+      margin: 0 0 0 20px;
+      @media screen and (max-width: 768px){
+        margin: 0;
+      }
+      & a{
+        position: relative;
+        font-size: 24px;
+        font-weight: 500;
+        color: $light;
+        text-transform: uppercase;
+        @media screen and (max-width: 768px){
+          padding: 20px;
+        }
+        &:before{
+          @include pseudo();
+          top: unset;
+          bottom: 0;
+          left: 0;
+          @include size(0, 1px);
+          background: $light;
+          transition: $default-transition;
+        }
+        &:hover:before{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

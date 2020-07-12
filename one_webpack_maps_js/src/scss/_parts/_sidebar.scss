@@ -1,0 +1,37 @@
+.sidebar{
+  width: 350px;
+  @media screen and (max-width: 768px){
+    width: 250px;
+  }
+  & div{
+    position: relative;
+    display: flex;
+    width: 100%;
+    transition: $default-transition;
+  }
+  & p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px 30px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.46);
+    @media screen and (max-width: 768px){
+      padding: 5px 30px;
+    }
+  }
+  & button{
+    @include size(95px);
+    min-width: 95px;
+    border: none;
+    background: $secondary-color;
+    @media screen and (max-width: 768px){
+      @include size(50px);
+      min-width: 50px;
+    }
+    & img{
+      pointer-events: none;
+    }
+  }
+}

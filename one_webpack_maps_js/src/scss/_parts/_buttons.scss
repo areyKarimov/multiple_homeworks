@@ -1,0 +1,52 @@
+/*
+BUTTONS STYLES
+ */
+
+.button {
+  @extend %buttonsGeometry;
+  .text-label {
+    display: block;
+    transition: $default-transition;
+  }
+  .text-hover {
+    transform: translateY($button-height) scaleY(0);
+    transition: $default-transition;
+  }
+  &:hover {
+    color: $light;
+    border-color: $black;
+    background: $black;
+    .text-label {
+      transform: translateY(-$button-height) scaleY(0);
+    }
+    .text-hover {
+      transform: translateY(-$button-height) scaleY(1);
+    }
+  }
+  &--light{
+    color: $light;
+    border-color: $light;
+    &:hover{
+      background: $light;
+      color: $black;
+      border-color: $black;
+    }
+  }
+  &--submit{
+    background: $secondary-color;
+    font-family: $main-font;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: unset;
+    color: $primary-color;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-bottom: 3px solid #8783b0;
+    border-radius: 3px;
+    &:hover{
+      color: $secondary-color;
+      border: 1px solid $secondary-color;
+      background: $primary-color;
+    }
+  }
+}

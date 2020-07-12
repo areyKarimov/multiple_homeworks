@@ -1,0 +1,31 @@
+/*
+BUTTONS GEOMETRY
+___
+# class .button in (_parts/buttons.scss)
+*/
+
+$button-gap: 1rem;
+$button-height: 50px;
+$button-border-radius: 0;
+$button-border: $black;
+
+%buttonsGeometry {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $button-height;
+  padding: 15px 50px;
+  background-color: transparent;
+  border: 1px solid $button-border;
+  border-radius: $button-border-radius;
+  font-size: 20px;
+  font-style: italic;
+  line-height: $button-height;
+  text-decoration: none;
+  text-transform: none;
+  transition: $default-transition;
+  color: $black;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}

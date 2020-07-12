@@ -1,0 +1,41 @@
+//mixins
+@import 'mixins/mixins';
+
+@import "node_modules/swiper/swiper";
+
+//fonts
+@import 'fonts/fonts';
+
+@import 'general/reset.scss';
+@import 'general/variables';
+@import 'general/general.scss';
+
+
+
+
+//components
+@import "components/logo";
+@import "components/menu";
+@import "components/socials";
+@import "components/button";
+@import "components/burger";
+
+
+
+
+//sections
+@import 'sections/header';
+@import 'sections/initial';
+@import 'sections/about';
+@import 'sections/news';
+@import 'sections/gallery';
+@import 'sections/footer';
+@import 'sections/map';
+@import 'sections/form';
+
+
+
+
+
+
+
