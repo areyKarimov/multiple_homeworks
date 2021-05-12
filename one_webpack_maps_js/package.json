@@ -12,7 +12,7 @@
   "dependencies": {
     "jquery": "^3.3.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^5.4.1"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.1",
